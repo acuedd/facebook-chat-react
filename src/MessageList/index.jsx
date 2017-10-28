@@ -19,7 +19,12 @@ export default class MessageList extends Component {
             let messages = [];
             const messagesFromDB = snapshot.val();
             for(let key in messagesFromDB) {
-                messages.push(messagesFromDB[key]);
+                const { text,username} = messagesFromDB[key];
+                messages.push({
+                    text,
+                    username,
+                    key : key
+                });
             }
             this.setState({ messages : messages });
         });
@@ -28,7 +33,7 @@ export default class MessageList extends Component {
     render() {
         return (
             <div>
-                {this.state.messages.map((message,key) => <Message key={key} text={message.text} username={message.username}/>)}
+                {this.state.messages.map(message => <Message key={message.key} id={message.key} text={message.text} username={message.username}/>)}
             </div>
         );
     }

@@ -31,13 +31,15 @@ export default class Login extends Component {
     render() {
         return (
             <Layout>
-                <h2>Registrate en el chat</h2>
-                <div className="form-group">
-                    <label>Ingresa tu username</label>
-                    <input type="text" className="form-control" name="username" onChange={this.setUsername} value={this.username}/>
+                <div className="jumbotron" style={ { marginTop : "10px" } }>
+                    <h2>Registrate en el chat</h2>
+                    <div className="form-group">
+                        <label>Ingresa tu username</label>
+                        <input type="text" className="form-control" name="username" onChange={this.setUsername} value={this.username}/>
+                    </div>
+                    <button className="btn btn-success" onClick={this.login}>Entrar</button>
+                    { (this.state.login) ? <Redirect to="/"/> : "" }
                 </div>
-                <button className="btn btn-success" onClick={this.login}>Entrar</button>
-                { (this.state.login) ? <Redirect to="/"/> : "" }
             </Layout>
         );
     }

@@ -27,7 +27,6 @@ export default class Main extends Component {
         return (
             <Layout>
                 { (this.state.auth == false) ? <Redirect to="/login"/> : "" }
-                <h3>Bienvenido al chat de la comunidad de Facebook Developer Circles</h3>
                 <MessageList/>
                 <MessageForm/>
             </Layout>

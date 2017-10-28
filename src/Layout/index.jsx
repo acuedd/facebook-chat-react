@@ -12,9 +12,8 @@ const Layout = props => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <Link to="logout"><a className="nav-link" href="#">Cerrar sesion</a></Link>
+                            <Link to="logout">Cerrar sesion</Link>
                         </li>
-                        
                     </ul>
                 </div>
             </nav>
