@@ -1,14 +1,14 @@
 import firebase from "firebase";
 
-var config = {
-    apiKey: "AIzaSyBSVvBq82aEU6x3mH6SZ0aSqxec2dkRGDQ",
-    authDomain: "react-chat-caf2a.firebaseapp.com",
-    databaseURL: "https://react-chat-caf2a.firebaseio.com",
-    projectId: "react-chat-caf2a",
-    storageBucket: "",
-    messagingSenderId: "1057078874804"
-};
-
-firebase.initializeApp(config);
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDIbetah-bYJbs8MFlNOkwUr5ahj_QXvQs",
+    authDomain: "majestic-altar-184319.firebaseapp.com",
+    databaseURL: "https://majestic-altar-184319.firebaseio.com",
+    projectId: "majestic-altar-184319",
+    //  storageBucket: "majestic-altar-184319.appspot.com",
+    messagingSenderId: "1006542451503"
+  };
+  firebase.initializeApp(config);
 
 export default firebase;

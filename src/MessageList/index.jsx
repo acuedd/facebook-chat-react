@@ -17,12 +17,15 @@ export default class MessageList extends Component {
         const items = firebase.database().ref("messages");
         items.on("value",(snapshot) => {
             let messages = [];
+            console.log(snapshot)
             const messagesFromDB = snapshot.val();
             for(let key in messagesFromDB) {
-                const { text,username} = messagesFromDB[key];
+                console.log(messagesFromDB[key]);
+                const { text,username, datetime} = messagesFromDB[key];
                 messages.push({
                     text,
                     username,
+                    datetime,
                     key : key
                 });
             }
@@ -33,7 +36,15 @@ export default class MessageList extends Component {
     render() {
         return (
             <div>
-                {this.state.messages.map(message => <Message key={message.key} id={message.key} text={message.text} username={message.username}/>)}
+                {
+                    this.state.messages.map(
+                        message => <Message key={message.key} 
+                                            id={message.key} 
+                                            text={message.text} 
+                                            username={message.username}
+                                            datetime={message.datetime}/>
+                    )
+                }
             </div>
         );
     }

@@ -2,9 +2,10 @@ import React , { Component } from "react";
 import firebase from "../firebase";
 
 class Message extends Component  {
-
+    
     constructor(props) {
         super(props);
+        
         this.deleteMessage = this.deleteMessage.bind(this);
     }
 
@@ -23,6 +24,7 @@ class Message extends Component  {
             <div className="alert alert-primary" style={{marginTop:"10px"}}>
                 <h4>{this.props.text}</h4>
                 <p> Enviado por : {this.props.username}</p>
+                <p> Fecha y hora: { this.props.datetime } </p>
                 <button className="btn btn-danger" onClick={this.deleteMessage}>Eliminar</button>
             </div>
         );

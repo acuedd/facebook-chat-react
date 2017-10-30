@@ -22,9 +22,14 @@ export default class MessageForm extends Component {
     sendMessage() {
         const username = localStorage.getItem("userName");
         if(this.state.text.length >= 4) {
+            var d = new Date();
+            var month = d.getMonth() +1;
+            var minutes = d.getUTCMinutes();
+            var datetime = d.getDate() + "-" + month + "-"+ d.getFullYear() + " "+ d.getUTCHours() + ":"+ minutes +":"+d.getUTCSeconds();
             firebase.database().ref("messages").push({
                 text : this.state.text,
-                username : username
+                username : username,
+                datetime : datetime,
             });
             this.setState({
                 text : ""
